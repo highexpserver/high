@@ -287,6 +287,7 @@ bool Party::invitePlayer(Player& player)
 	}
 
 	g_game().updatePlayerHelpers(leader);
+
 	leader->sendCreatureShield(&player);
 	player.sendCreatureShield(leader);
 

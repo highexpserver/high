@@ -23,11 +23,6 @@ void Guild::addMember(Player* player)
 void Guild::removeMember(Player* player)
 {
 	membersOnline.remove(player);
-	for (Player* member : membersOnline) {
-		g_game().updatePlayerHelpers(member);
-	}
-
-	g_game().updatePlayerHelpers(player);	
 	if (membersOnline.empty()) {
 		g_game().removeGuild(id);
 		delete this;
