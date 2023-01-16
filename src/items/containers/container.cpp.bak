@@ -222,11 +222,7 @@ std::ostringstream& Container::getContentDescription(std::ostringstream& os, boo
 			os << ", ";
 		}
 
-		if (oldProtocol) {
-			os << item->getNameDescription();
-		} else {
-			os << "{" << item->getID() << "|" << item->getNameDescription() << "}";
-		}
+		os << "{" << item->getID() << "|" << item->getNameDescription() << "}";
 	}
 
 	if (firstitem) {

@@ -479,8 +479,6 @@ private:
 
 	bool loggedIn = false;
 	bool shouldAddExivaRestrictions = false;
-	
-	bool oldProtocol = false;
 
 	void sendInventory();
 
