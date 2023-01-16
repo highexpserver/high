@@ -320,12 +320,12 @@ error_t Account::SetAccountIdentifier(std::string accountIdentifier) {
   return ERROR_NO;
 }
 
-error_t Account::GetAccountIdentifier(std::string *accountIdentifier) {
-  if (accountIdentifier == nullptr) {
+error_t Account::GetEmail(std::string *email) {
+  if (email == nullptr) {
     return ERROR_NULLPTR;
   }
 
-  *accountIdentifier = accountIdentifier_;
+  *email = email_;
   return ERROR_NO;
 }
 

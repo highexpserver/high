@@ -6938,7 +6938,9 @@ function Player.sendQuestLine(self, questId)
 		if missions then
 			for missionId = 1, #missions do
 				if self:missionIsStarted(questId, missionId) then
+					if self:getClient().version >= 1200 then
 					msg:addU16(self:getMissionId(questId, missionId))
+					end					
 					msg:addString(self:getMissionName(questId, missionId))
 					msg:addString(self:getMissionDescription(questId, missionId))
 				end

@@ -360,6 +360,9 @@ DailyReward.processReward = function(playerId, target)
 end
 
 function Player.sendOpenRewardWall(self, shrine)
+	if self:getClient().version < 1200 then
+		return true
+	end
 	local msg = NetworkMessage()
 	msg:addByte(ServerPackets.OpenRewardWall) -- initial packet
 	msg:addByte(shrine) -- isPlayer taking bonus from reward shrine (1) - taking it from a instant bonus reward (0)
@@ -389,6 +392,9 @@ function Player.sendOpenRewardWall(self, shrine)
 end
 
 function Player.sendCollectionResource(self, byte, value)
+	if self:getClient().version < 1200 then
+		return true
+	end
 	-- TODO: Migrate to protocolgame.cpp
 	local msg = NetworkMessage()
 	msg:addByte(0xEE) -- resource byte
@@ -530,6 +536,9 @@ function Player.sendError(self, error)
 end
 
 function Player.sendDailyRewardCollectionState(self, state)
+	if self:getClient().version < 1200 then
+		return true
+	end
 	local msg = NetworkMessage()
 	msg:addByte(ServerPackets.DailyRewardCollectionState)
 	msg:addByte(state)
@@ -537,6 +546,9 @@ function Player.sendDailyRewardCollectionState(self, state)
 end
 
 function Player.sendRewardHistory(self)
+	if self:getClient().version < 1200 then
+		return true
+	end
 	local msg = NetworkMessage()
 	msg:addByte(ServerPackets.DailyRewardHistory)
 
@@ -626,6 +638,9 @@ function Player.readDailyReward(self, msg, currentDay, state)
 end
 
 function Player.sendDailyReward(self)
+	if self:getClient().version < 1200 then
+		return true
+	end
 	local msg = NetworkMessage()
 	msg:addByte(ServerPackets.DailyRewardBasic)
 	msg:addByte(DAILY_REWARD_COUNT)

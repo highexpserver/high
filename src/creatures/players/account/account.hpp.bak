@@ -231,7 +231,6 @@ class Account {
   uint32_t premium_remaining_days_;
   time_t premium_last_day_;
   AccountType account_type_;
-  bool oldProtocol_;
 };
 
 }  // namespace account
