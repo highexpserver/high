@@ -7067,7 +7067,8 @@ void ProtocolGame::openImbuementWindow(Item *item)
 	NetworkMessage msg;
 	msg.addByte(0xEB);
 	msg.add<uint16_t>(item->getID());
-	if (!oldProtocol && (item->getClassification() > 0) {	
+	
+	if (!oldProtocol && item->getClassification() > 0) {
 		msg.addByte(item->getTier());
 	}
 	msg.addByte(item->getImbuementSlot());

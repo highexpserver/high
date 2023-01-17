@@ -6810,7 +6810,7 @@ void ProtocolGame::AddCreature(NetworkMessage &msg, const Creature *creature, bo
 
 	msg.add<uint16_t>(creature->getStepSpeed());
 
-	if (!oldProtocol) {
+	
 	CreatureIcon_t icon;
 	auto sendIcon = false;
 	if (otherPlayer) {
@@ -6853,7 +6853,7 @@ void ProtocolGame::AddCreature(NetworkMessage &msg, const Creature *creature, bo
 			}
 		}
 	}
-	}
+	
 
 	msg.addByte(player->getSkullClient(creature));
 	msg.addByte(player->getPartyShield(otherPlayer));
