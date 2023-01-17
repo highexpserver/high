@@ -7760,9 +7760,6 @@ void ProtocolGame::parseDepotSearchItemRequest(NetworkMessage &msg)
 
 void ProtocolGame::parseRetrieveDepotSearch(NetworkMessage &msg)
 {
-	if (oldProtocol) {
-		return;
-	}	
 	uint16_t itemId = msg.get<uint16_t>();
 	uint8_t itemTier = 0;
 	if (Item::items[itemId].upgradeClassification > 0) {
