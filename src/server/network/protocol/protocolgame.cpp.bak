@@ -2985,6 +2985,9 @@ void ProtocolGame::sendCreatureShield(const Creature *creature)
 
 void ProtocolGame::sendCreatureEmblem(const Creature *creature)
 {
+		if (oldProtocol) {
+		return;
+	}	
 	if (!canSee(creature))
 	{
 		return;
